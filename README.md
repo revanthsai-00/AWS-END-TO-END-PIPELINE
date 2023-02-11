@@ -1,11 +1,4 @@
-To create zip file for aws lambda function 
-
-use below commadn
-
-```commandline
-pip install --platform manylinux2014_x86_64 --target=<folder_name> --implementation cp --python 3.9 --only-binary=:all: --upgrade <lib1> <lib2>
-```
-
-```
-pip install --platform manylinux2014_x86_64 --target=lambda_function_code --implementation cp --python 3.9 --only-binary=:all: --upgrade pymongo[srv] requests boto3
-```
+Have fetched data from api usi Lambda Function and stored the data in aws S3.
+Have Read the data from s3 and performed data transformations in aws glue using pyspark.
+Have written the transformed data to the table created in Dynamo Db.
+Scheduled the lambda function to download data automatically on specific intervals and schedule the glue job to shift data from s3 to redshift.
